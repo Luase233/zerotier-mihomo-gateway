@@ -1,5 +1,7 @@
 # ZeroTier → Windows → Mihomo gateway
 
+当前版本：[v0.1.0](https://github.com/Luase233/zerotier-mihomo-gateway/releases/tag/v0.1.0)（实验性预发布）。版本变更见 [CHANGELOG.md](CHANGELOG.md)。
+
 Windows 原生的实验性 IPv4 透明网关：将指定 ZeroTier 客户端的转发数据包转换为本机 Mihomo SOCKS5 连接。不开启 Clash TUN，不创建 Wintun/TUN 网卡，不修改 Windows 默认路由。
 
 ```text
