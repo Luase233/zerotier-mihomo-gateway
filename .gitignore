@@ -1,0 +1,26 @@
+# Machine-local configuration, operational records and recovery backups
+/gateway.json
+/state/
+/archive/
+/DEPLOYED.json
+*.clixml
+*.log
+*.ready.json
+
+# Build products and third-party runtime binaries are fetched locally
+/bin/
+/dist/
+/.cache/
+/runtime/*.dll
+/runtime/*.sys
+*.exe
+*.zip
+
+# Credentials and editor files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.vscode/
+.idea/

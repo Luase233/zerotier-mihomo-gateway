@@ -1,0 +1,11 @@
+{
+  "source_ip": "10.147.20.2",
+  "windows_ip": "10.147.20.1",
+  "interface_index": 1,
+  "proxy": "127.0.0.1:7897",
+  "dns": "1.1.1.1:53",
+  "mtu": 1280,
+  "max_flows": 256,
+  "idle_timeout_seconds": 120,
+  "windivert_dll": "runtime/WinDivert.dll"
+}
