@@ -16,7 +16,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/Luase233/zerotier-mihomo-gateway/internal/settings"
+	"github.com/Luase233/zerobridge-mihomo/internal/settings"
 )
 
 type State struct {

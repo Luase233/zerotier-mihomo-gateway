@@ -1,4 +1,4 @@
-module github.com/Luase233/zerotier-mihomo-gateway
+module github.com/Luase233/zerobridge-mihomo
 
 go 1.26.3
 

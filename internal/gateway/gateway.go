@@ -15,7 +15,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/Luase233/zerotier-mihomo-gateway/internal/socks"
+	"github.com/Luase233/zerobridge-mihomo/internal/socks"
 	"github.com/xjasonlyu/tun2socks/v2/core"
 	"github.com/xjasonlyu/tun2socks/v2/core/adapter"
 	"gvisor.dev/gvisor/pkg/buffer"

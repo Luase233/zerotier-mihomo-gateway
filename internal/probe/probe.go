@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Luase233/zerotier-mihomo-gateway/internal/socks"
+	"github.com/Luase233/zerobridge-mihomo/internal/socks"
 	"golang.org/x/net/dns/dnsmessage"
 )
 

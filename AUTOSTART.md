@@ -1,6 +1,8 @@
 # Optional Windows startup task
 
-This repository is source for an experimental gateway, not a universal unattended installer. Review network/NAT scope in README.md first. Keep the client Default Route OFF during installation, stopping, rebooting and NAT restoration.
+[简体中文](AUTOSTART.zh-CN.md) · **English** · [ZeroBridge Mihomo](README.en.md)
+
+This repository is source for an experimental forwarding gateway, not a universal unattended installer or a VPN service. Review network/NAT scope in README.en.md first. Keep the client Default Route OFF during installation, stopping, rebooting and NAT restoration.
 
 ## Prepare the installation
 

@@ -21,11 +21,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/Luase233/zerotier-mihomo-gateway/internal/divert"
-	"github.com/Luase233/zerotier-mihomo-gateway/internal/gateway"
-	"github.com/Luase233/zerotier-mihomo-gateway/internal/preflight"
-	"github.com/Luase233/zerotier-mihomo-gateway/internal/probe"
-	"github.com/Luase233/zerotier-mihomo-gateway/internal/settings"
+	"github.com/Luase233/zerobridge-mihomo/internal/divert"
+	"github.com/Luase233/zerobridge-mihomo/internal/gateway"
+	"github.com/Luase233/zerobridge-mihomo/internal/preflight"
+	"github.com/Luase233/zerobridge-mihomo/internal/probe"
+	"github.com/Luase233/zerobridge-mihomo/internal/settings"
 	"golang.org/x/sys/windows"
 )
 
