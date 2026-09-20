@@ -1,5 +1,7 @@
 # Machine-local configuration, operational records and recovery backups
 /gateway.json
+/mobile.json
+/pairing.png
 /state/
 /archive/
 /DEPLOYED.json

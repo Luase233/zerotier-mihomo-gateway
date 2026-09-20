@@ -29,7 +29,7 @@ import (
 	"golang.org/x/sys/windows"
 )
 
-const version = "0.1.0"
+const version = "0.3.0"
 
 func main() {
 	log := slog.New(slog.NewJSONHandler(os.Stderr, nil))

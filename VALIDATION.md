@@ -15,7 +15,16 @@ Validated in the original Windows deployment:
 - Native PowerShell5.1 lifecycle tests; actual SYSTEM task startup, High process priority and proxy restart while the independent guard remained alive.
 - Supervisor fixtures: fresh startup, unavailable upstream with guard retained, replacement guard before retiring the old proxy, and previous-boot PID reuse avoidance.
 
-Not established:
+Desktop/mobile validation for v0.3.0:
+
+- Eleven desktop model checks, including stale heartbeat, partial JSON log tails, path boundaries and rate reset on process changes.
+- Mobile server tests cover token/IP/Host/Origin boundaries, restricted endpoints, selector membership, duplicate commands, durable command records, readback confirmation and unconfirmed results.
+- A 390×844 mobile browser viewport passed pairing, remembered access, search, confirmation cancellation and no horizontal overflow, with no page-script errors.
+- The real local named-pipe controller was exercised by reselecting the existing node. The response and desktop audit agreed; the desktop UI displayed the confirmed command.
+- The user subsequently confirmed that a physical iPhone could control proxy selection successfully. This is user-reported acceptance, not a comprehensive test across iOS versions.
+- Mobile and tray logon tasks were installed with limited user privileges; the existing gateway proxy and guard remained running during installation.
+
+Still not established:
 
 - Long-term reliability, independent security audit, sustained adversarial/resource-exhaustion testing.
 - Every client UDP application or actual client UDP large-packet path. Flow counts and TCP-capable video playback alone do not prove UDP replies.

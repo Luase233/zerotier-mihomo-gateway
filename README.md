@@ -4,9 +4,9 @@
 
 **面向 Windows 的 ZeroTier → Mihomo / Clash IPv4 转发网关。** 让客户端通过 ZeroTier 到达 Windows，再将其转发流量交给用户已有的 SOCKS5 代理。
 
-Windows amd64 · TCP / UDP / DNS · 无 TUN · MIT
+Windows amd64 · TCP / UDP / DNS · 无 TUN · 桌面面板与托盘 · MIT
 
-[v0.1.0 实验性预发布](https://github.com/Luase233/zerobridge-mihomo/releases/tag/v0.1.0) · [更新日志](CHANGELOG.md) · [开机自启](AUTOSTART.zh-CN.md) · [验证范围（English）](VALIDATION.md)
+[v0.3.0 实验性预发布](https://github.com/Luase233/zerobridge-mihomo/releases/tag/v0.3.0) · [界面与托盘](DESKTOP.md) · [更新日志](CHANGELOG.md) · [开机自启](AUTOSTART.zh-CN.md) · [验证范围（English）](VALIDATION.md)
 
 > 本项目仅提供本地转发与协议转换功能，**不提供或运营 VPN 服务、代理节点、订阅或网络出口服务**。ZeroTier 网络和上游代理均由使用者自行配置。完整说明见[项目使用声明](DISCLAIMER.md)。
 
@@ -29,6 +29,8 @@ flowchart TD
 
 ## 功能
 
+- **iPhone 手机控制：** 同款网页可添加到主屏幕，扫码配对、搜索并切换 Clash 手动代理组节点；电脑端同步命令与确认结果。见[手机控制说明](MOBILE.md)。
+- **交互界面与托盘：** 中英文运行面板、收发包速率 / 活动连接图表、日志入口、带确认和 UAC 的启动/停止，以及独立的用户登录自启。见[桌面使用说明](DESKTOP.md)。
 - **单客户端范围：** filter 为 `ip and ip.SrcAddr == <source_ip>`，只作用于转发层。Windows 本机、Mihomo 出站和 ZeroTier 外层连接不匹配这一过滤器。
 - **TCP 与 UDP：** TCP 使用 SOCKS CONNECT；UDP 使用 UDP ASSOCIATE。上游和 UDP relay 限于本机回环地址，没有代理失败后直连的回退。
 - **DNS：** 转发路径上的普通 TCP/UDP 53 请求改写到配置的公网 DNS，并经 SOCKS 发送。本地接收及同网段直接通信不在捕获范围内。

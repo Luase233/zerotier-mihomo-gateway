@@ -2,7 +2,24 @@
 
 [简体中文 README](README.md) · [English README](README.en.md)
 
-## Unreleased / 未发布
+## v0.3.0 — 2026-09-20
+
+v0.2.0 的本地桌面预览与手机控制一起发布；没有单独发布 v0.2.0 标签。
+The local v0.2.0 desktop preview ships in this release; no separate v0.2.0 tag was published.
+
+- 增加与桌面同款设计的 iPhone 网页控制台：扫码配对、代理组/节点搜索与切换、主屏幕入口、操作记录。
+- 通过本机命名管道控制已有 Clash；新增 HTTP 服务仅绑定配置的私有 IPv4，使用客户端地址白名单、访问密钥、Host/Origin 校验及范围受限的防火墙规则。
+- 电脑端实时显示命令和结果；成功必须回读确认 Clash 当前选择。失败或结果不明时不会误报成功，不提供完整 Clash 管理接口。
+- Added an iPhone web controller matching the desktop design: QR pairing, group/node search and selection, Home Screen entry and command history.
+- Controls existing Clash through a local named pipe. The optional HTTP service binds a configured private IPv4 address and uses client allowlisting, access tokens, Host/Origin checks and a scoped firewall rule.
+- Desktop command synchronization verifies successful changes by reading Clash's current selection. Unconfirmed operations stay visibly unconfirmed; the full Clash administration API is not exposed.
+
+用户已确认 iPhone 实机可控制节点切换。User confirmed successful control from a physical iPhone.
+
+- 增加独立中英文 Windows 界面、系统托盘、包速率与活动连接图表、日志入口、启停确认，以及用户登录自启安装器。
+- 界面以普通权限运行，不新增网络监听；启停沿用管理员管理脚本。关闭/退出界面不停止网关。
+- Added a bilingual Windows dashboard, notification-area icon, packet/connection charts, logs, confirmed Start/Stop controls and a user-logon installer.
+- The UI runs without elevation or a network listener; explicit management actions use the existing elevated scripts. Closing or exiting the UI leaves the gateway running.
 
 - 项目更名为 **ZeroBridge Mihomo**，仓库与 Go 模块路径同步调整。
 - 完善中英文 README、双语开机自启文档，以及“不提供 VPN 或代理服务”的功能范围声明。

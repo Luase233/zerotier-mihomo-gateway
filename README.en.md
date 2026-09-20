@@ -4,9 +4,9 @@
 
 **A Windows IPv4 forwarding gateway from ZeroTier to Mihomo / Clash.** Receive client traffic over ZeroTier and pass it to a SOCKS5 proxy the user already operates or has configured.
 
-Windows amd64 · TCP / UDP / DNS · No TUN · MIT
+Windows amd64 · TCP / UDP / DNS · No TUN · Desktop dashboard and tray · MIT
 
-[v0.1.0 experimental prerelease](https://github.com/Luase233/zerobridge-mihomo/releases/tag/v0.1.0) · [Changelog](CHANGELOG.md) · [Autostart](AUTOSTART.md) · [Validation scope](VALIDATION.md)
+[v0.3.0 experimental prerelease](https://github.com/Luase233/zerobridge-mihomo/releases/tag/v0.3.0) · [Desktop and tray](DESKTOP.md) · [Changelog](CHANGELOG.md) · [Autostart](AUTOSTART.md) · [Validation scope](VALIDATION.md)
 
 > This project provides local forwarding and protocol conversion only. **It does not provide or operate a VPN service, proxy nodes, subscriptions or an Internet egress service.** Users configure their own ZeroTier network and upstream proxy. See the [scope-of-use statement](DISCLAIMER.md).
 
@@ -29,6 +29,8 @@ flowchart TD
 
 ## Features
 
+- **iPhone control:** matching Home Screen web interface with QR pairing, node search and manual group selection; desktop command/result synchronization. See the [mobile guide](MOBILE.md).
+- **Desktop and tray:** bilingual dashboard, packet-rate / active-connection charts, logs, confirmed Start/Stop with UAC and a separate user-logon task. See the [desktop guide](DESKTOP.md).
 - **One configured client:** filter `ip and ip.SrcAddr == <source_ip>` at the forwarding layer. Windows-local connections, Mihomo outbound connections and ZeroTier's outer transport do not match it.
 - **TCP and UDP:** SOCKS CONNECT and UDP ASSOCIATE. The upstream and UDP relay are restricted to loopback. There is no direct-connect fallback after proxy failure.
 - **DNS:** ordinary forwarded TCP/UDP port 53 requests are redirected to the configured public resolver over SOCKS. Local delivery and direct same-subnet traffic are outside this capture scope.
