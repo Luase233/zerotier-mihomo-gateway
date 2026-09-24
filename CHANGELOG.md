@@ -2,6 +2,13 @@
 
 [简体中文 README](README.md) · [English README](README.en.md)
 
+## Unreleased / 未发布
+
+- 修复 Windows 重启后 ZeroTier 网卡编号变化导致网关预检失败：启动时按配置的 ZeroTier 地址与客户端子网重新识别活动网卡；不存在或匹配多个时拒绝启动。
+- 手机控制安装器也按 ZeroTier 地址识别网卡，避免重新安装时依赖过期编号。
+- Resolve the active ZeroTier interface by its configured Windows/client addresses at gateway startup, so Windows interface-index changes across reboots no longer prevent startup. Missing or ambiguous matches fail safely.
+- The mobile installer likewise finds the current ZeroTier adapter by address rather than a stale interface index.
+
 ## v0.3.0 — 2026-09-20
 
 v0.2.0 的本地桌面预览与手机控制一起发布；没有单独发布 v0.2.0 标签。

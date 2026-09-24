@@ -69,6 +69,9 @@ func run(log *slog.Logger) error {
 	if err != nil {
 		return err
 	}
+	if err := settings.ResolveInterface(&c); err != nil {
+		return err
+	}
 	state, err := preflight.Check(c, mode == "guard" || mode == "proxy")
 	if err != nil {
 		return err

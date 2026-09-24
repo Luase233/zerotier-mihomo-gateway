@@ -8,6 +8,8 @@ Windows amd64 · TCP / UDP / DNS · No TUN · Desktop dashboard and tray · MIT
 
 [v0.3.0 experimental prerelease](https://github.com/Luase233/zerobridge-mihomo/releases/tag/v0.3.0) · [Desktop and tray](DESKTOP.md) · [Changelog](CHANGELOG.md) · [Autostart](AUTOSTART.md) · [Validation scope](VALIDATION.md)
 
+**Reboot fix on `main`:** if Windows reassigns the ZeroTier interface index, the gateway resolves the active adapter from the configured Windows ZeroTier address and client subnet. `interface_index` remains a hint in `gateway.json`; startup requires exactly one matching active ZeroTier adapter.
+
 > This project provides local forwarding and protocol conversion only. **It does not provide or operate a VPN service, proxy nodes, subscriptions or an Internet egress service.** Users configure their own ZeroTier network and upstream proxy. See the [scope-of-use statement](DISCLAIMER.md).
 
 ## What does it solve?

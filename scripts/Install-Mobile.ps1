@@ -13,8 +13,13 @@ $GatewayRoot = [IO.Path]::GetFullPath($GatewayRoot).TrimEnd('\')
 if ($GatewayRoot.Contains('"') -or $GatewayRoot.Contains("`n") -or $GatewayRoot.Contains("`r")) { throw 'Invalid root path.' }
 if ($Port -lt 1024 -or $Port -gt 65535) { throw 'Use a port between 1024 and 65535.' }
 $gateway = Get-Content -Raw -LiteralPath (Join-Path $GatewayRoot 'gateway.json') | ConvertFrom-Json
-$address = Get-NetIPAddress -AddressFamily IPv4 -InterfaceIndex $gateway.interface_index | Where-Object IPAddress -eq $gateway.windows_ip
-if (-not $address) { throw 'The configured ZeroTier address is not assigned to the configured interface.' }
+$candidates = @(Get-NetIPAddress -AddressFamily IPv4 -IPAddress $gateway.windows_ip -ErrorAction Stop)
+$address = @($candidates | Where-Object {
+    $adapter = Get-NetAdapter -InterfaceIndex $_.InterfaceIndex -ErrorAction SilentlyContinue
+    $null -ne $adapter -and $adapter.Status -eq 'Up' -and $adapter.InterfaceDescription -eq 'ZeroTier Virtual Port'
+})
+if ($address.Count -ne 1) { throw 'The configured Windows IP must identify exactly one active ZeroTier adapter.' }
+$address = $address[0]
 foreach($ip in @($gateway.windows_ip,$gateway.source_ip)) {
     $parsed = [Net.IPAddress]::Parse($ip)
     if($parsed.AddressFamily -ne [Net.Sockets.AddressFamily]::InterNetwork) { throw 'IPv4 addresses are required.' }

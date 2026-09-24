@@ -8,6 +8,8 @@ Windows amd64 · TCP / UDP / DNS · 无 TUN · 桌面面板与托盘 · MIT
 
 [v0.3.0 实验性预发布](https://github.com/Luase233/zerobridge-mihomo/releases/tag/v0.3.0) · [界面与托盘](DESKTOP.md) · [更新日志](CHANGELOG.md) · [开机自启](AUTOSTART.zh-CN.md) · [验证范围（English）](VALIDATION.md)
 
+**重启修复已进入 `main`：** Windows 重新分配 ZeroTier 网卡编号时，网关按配置的 Windows ZeroTier 地址及客户端子网识别当前接口。`gateway.json` 的 `interface_index` 仍保留为提示值；必须匹配唯一的活动 ZeroTier 网卡才会启动。
+
 > 本项目仅提供本地转发与协议转换功能，**不提供或运营 VPN 服务、代理节点、订阅或网络出口服务**。ZeroTier 网络和上游代理均由使用者自行配置。完整说明见[项目使用声明](DISCLAIMER.md)。
 
 ## 解决什么问题？
